@@ -1,17 +1,12 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
-import particlesOptions from "./particles.json";
 import { Homepage } from './pages/Homepage';
 import { Dashboard } from './pages/Dashboard';
 import { Protected } from './components/navigation/Protected';
 import { Header } from './components/navigation/Header';
+import { ParticlesContainer } from './components/ui/ParticlesContainer';
 
 function App() {
-  const particlesInit = useCallback(main => {
-    loadFull(main);
-  }, [])
 
   /* Initialize the state with the contents of localstorage */
   const [user, setUser] = useState(localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : { username: null, password: null, logged: false })
@@ -37,7 +32,7 @@ function App() {
 
   return (
     <div className="font-['Quicksand'] flex md:flex-row flex-col ">
-      <Particles options={particlesOptions} init={particlesInit} />
+      <ParticlesContainer />
       <Header user={user} syncUserState={syncUserState} setLogin={setLogin} setLogout={setLogout} />
       <Routes>
         <Route path='/' element={<Homepage />} />

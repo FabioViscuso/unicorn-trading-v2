@@ -1,7 +1,7 @@
 import { Pricing } from "./Pricing";
 
 
-export const PricesWrapper = (props) => {
+export const PricingWrapper = (props) => {
     const pricing = [
         { id: 1, billingPeriod: 'month', price: 67 },
         { id: 2, billingPeriod: 'year', price: 670 }

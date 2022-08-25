@@ -1,6 +1,6 @@
-import { LoginModal } from "./LoginModal";
+import { LoginModal } from "../ui/LoginModal";
 import { useState } from 'react'
-import { SignUpModal } from './SignUpModal'
+import { SignUpModal } from '../ui/SignUpModal'
 import { Link } from "react-router-dom";
 
 export function Header({ user, setLogin, setLogout, syncUserState }) {
