@@ -1,4 +1,11 @@
-export const List = (props) => {
+interface ListProps {
+    id: number,
+    title: string,
+    img: string,
+    text: string
+}
+
+export const List = (props: ListProps) => {
     return (
         <section id={'homelist' + props.id} className={`flex gap-8 overflow-hidden mx-0 py-8 px-4 w-full  flex-row ${props.id % 2 === 1 ? "flex-row" : "flex-row-reverse"}`}>
             <picture className="w-64" >

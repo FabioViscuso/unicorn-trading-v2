@@ -3,12 +3,9 @@ import { LoginModal } from "../ui/LoginModal";
 import { SignUpModal } from '../ui/SignUpModal'
 import { useUI } from "../../utils/useUI";
 import { useLogin } from "../../utils/useLogin";
+import logo from "../../images/unicorno_logo.png"
 
 export function Header() {
-
-    // const Logo = {
-    //     backgroundImage: `url('/unicorno_logo.png')`
-    // }
 
     const { isLogged, logoutHandler } = useLogin()
     const { isLoginModalVisible, isSignupModalVisible, openLoginModal, openSignupModal } = useUI()
@@ -18,7 +15,7 @@ export function Header() {
         flex flex-row md:max-h-screen md:flex-col justify-between md:justify-start px-6
         md:min-w-60 md:basis-1/3 mobile:h-24 sticky top-0">
             <div className="row-wrap align-center flex flex-row justify-around md:px-14 px-2 ">
-                <img className="logo animate-pulse w-20 h-30 " src='../images/Sidebar/unicorno_logo.png'></img>
+                <img className="logo animate-pulse w-20 h-30 " src={logo} alt={'main logo'}></img >
                 <h2 className="text-2xl pb-1">Unicorn <br /> Trading</h2>
             </div>
 

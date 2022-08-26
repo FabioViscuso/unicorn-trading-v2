@@ -1,4 +1,9 @@
-export const Pricing = (props) => {
+interface PricingProps {
+    price: number,
+    billingPeriod: string
+}
+
+export const Pricing = (props: PricingProps) => {
     return (
         <section className="card flex flex-col md:flex-row justify-between " >
             <div className="flex flex-col p-2 md:p-4  items-center" >

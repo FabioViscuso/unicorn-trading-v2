@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+#tsparticles {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+    /* COLORS */
+    /* --color-skyblue: #7bdff2;
+    --color-celeste: #b2f7ef;
+    --color-mintcream: #eff7f6;
+    --color-cottoncandy: #f7d6e0;
+    --color-piggypink: #f2b5d4;
+    --color-darkgray: #333333;
+    --color-gray: #555555; */
