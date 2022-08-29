@@ -41,6 +41,11 @@ input::placeholder {
     opacity: 1;
 }
 
+::selection {
+  color: #333333;
+  background-color: #eff7f6;
+}
+
 #tsparticles {
     position: fixed;
     height: 100%;

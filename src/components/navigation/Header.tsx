@@ -13,7 +13,7 @@ export function Header() {
     const { isLoginModalVisible, isSignupModalVisible, openLoginModal, openSignupModal } = useUI()
 
     return (
-        <nav className="font-['Quicksand'] bg-gradient-to-br opacity-75 z-10 from-[#f2b5d4] via-[#eff7f6] to-[#7bdff2]
+        <nav className="font-['Quicksand'] bg-[#00000088] text-white
         flex xs:flex-row md:flex-col justify-between xs:h-24 md:h-screen xs:w-full md:w-56 px-6 xs:py-1 md:py-10
          fixed top-0 bottom-0">
             <div className="row-wrap align-center flex flex-row justify-around md:px-14 px-2 ">
@@ -51,21 +51,21 @@ export function Header() {
                         <div className=" pb-1 "></div>
                     </Link>
                 </button>}
-                {isLogged && <button className="sugatCloudBtn md:hover:animete-bounce hover:animate-bounce  text-base font-semibold">
+                {isLogged && <button className="neumButton md:hover:animete-bounce hover:animate-bounce  text-base font-semibold">
                     <Link to={'/'}>
                         <span>Home</span>
                         <div className=" "></div>
                     </Link>
                 </button>}
-                {!isLogged && <button onClick={openLoginModal} className="sugarCloudBtn text-base py-2" >
+                {!isLogged && <button onClick={openLoginModal} className="neumButton text-base py-4" >
                     <span>Login</span>
                     <div className=" "></div>
                 </button>}
-                {isLogged && <button onClick={logoutHandler} className="sugarCloudBtn text-base py-2" >
+                {isLogged && <button onClick={logoutHandler} className="neumButton text-base py-4" >
                     <span>Logout</span>
                     <div className=" "></div>
                 </button>}
-                {!isLogged && <button onClick={openSignupModal} className="sugarCloudBtn text-base py-2" >
+                {!isLogged && <button onClick={openSignupModal} className="neumButton text-base py-4" >
                     <span>Sign Up</span>
                     <div className=" "></div>
                 </button>}
