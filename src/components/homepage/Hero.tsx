@@ -11,7 +11,7 @@ export const Hero = () => {
                 </h1>
 
                 <form className="flex flex-col content-end py-10 w-full">
-                    <p className="text-[#333] text-2xl pb-2 mb-10">Wanna hear more? Let's keep in touch! No spam, we promise.</p>
+                    <p className="text-[#333] text-center text-2xl pb-2 mb-10">Wanna hear more? Let's keep in touch! No spam, we promise.</p>
                     <div className="flex flex-row justify-start gap-10">
                         <div className="relative basis-4/6">
                             <input id={"marketing-email"} className="w-full bg-gray-100 neumButton hover:translate-y-0 rounded-md w-42 px-2 py-3 h-15 outline-none" type='email' />
@@ -21,7 +21,7 @@ export const Hero = () => {
                     </div>
                 </form>
             </div>
-            <picture className="hidden w-full bg-gradient-to-b from-[#00000088] to-[#00000000] bg-clip-custom xl:flex flex-col justify-center px-2 md:p-7 content-center">
+            <picture className="hidden w-full bg-gradient-to-b from-[#ffc4f1b1] to-[#00000000] bg-clip-custom xl:flex flex-col justify-center px-2 md:p-7 content-center">
                 <Lottie animationData={paperPlane} loop={true} />
             </picture>
         </section >
