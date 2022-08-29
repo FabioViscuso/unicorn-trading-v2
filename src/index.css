@@ -2,11 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+/* COLORS */
+/* --color-skyblue: #7bdff2;
+--color-celeste: #b2f7ef;
+--color-mintcream: #eff7f6;
+--color-cottoncandy: #f7d6e0;
+--color-piggypink: #f2b5d4;
+--color-darkgray: #333333;
+--color-gray: #555555;
+--color-lightGray: #9da1a1*/
+
+body, html, #root {
+    height: 100%;
+    width: 100%;
+  }
+
+  *::-webkit-scrollbar {
+    width: 12px;               /* width of the entire scrollbar */
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #b2f7ef;        /* color of the tracking area */
+    border-radius: 20px;
+  }
+
+  body::-webkit-scrollbar-track {
+    border-radius: 0px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #7bdff2;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 2px solid #9da1a1;  /* creates padding around scroll thumb */
+  }
+
 input::placeholder {
     color:#333333 ;
     opacity: 1;
 }
-
 
 #tsparticles {
     position: fixed;
@@ -19,29 +52,19 @@ input::placeholder {
     z-index: -1;
 }
 
-    /* COLORS */
-    /* --color-skyblue: #7bdff2;
-    --color-celeste: #b2f7ef;
-    --color-mintcream: #eff7f6;
-    --color-cottoncandy: #f7d6e0;
-    --color-piggypink: #f2b5d4;
-    --color-darkgray: #333333;
-    --color-gray: #555555;
-    --color-lightGray: #9da1a1*/
 .sugarCloudBtn{
     color: #090909;
-    padding: 0.3em 1.3em;
-    font-size: 18px;
-    border-radius: 0.5em;
-    background: inherit;
-    /* border: 1px solid #e8e8e8; */
+    font-family: "Josefin Sans", sans-serif;
+    background: transparent;
     transition: all .3s;
+    border-radius: 10px;
     box-shadow:
     6px 6px 12px #c5c5c5,
     -6px -6px 12px #fff,
     inset -2px -2px 6px #c5c5c5,
     inset 2px 2px 5px #fff;
 }
+
 .sugarCloudBtn:hover {
     box-shadow:
     -6px -6px 12px #c5c5c5,
@@ -49,15 +72,16 @@ input::placeholder {
     inset 2px 2px 6px #c5c5c5,
     inset -2px -2px 5px #fff;
 }
+
 .neumButtonContainer{
 background:#f8d7e8;
 }
 
 .neumButton{
 color:#333333;
-
+font-family: "Josefin Sans", sans-serif;
 font-size: 1.2rem;
-border-radius:0.5em;
+border-radius:10px;
 background: #ffe9f4;
 /* border:1px solid  #f8d7e8; */
 transition: all .3s;
@@ -84,24 +108,25 @@ transform: translateY(-3px);
     border-right: 1px solid #9da1a1;
 }
 .typing-effect--label {
-    transform: translate(0);
+    font-family: "Josefin Sans", sans-serif;
+    transform: translate(0, -50%);
     width: 14ch;
-    top: .8rem;
-    left: 1rem;
+    top: 50%;
+    left: 10%;
     transition: all .5s;
-    line-height: 1.4;
+    line-height: 1.2;
+    cursor: pointer;
 }
 
 #marketing-email:focus + label,
 #marketing-email:focus-visible + label,
 #marketing-email:active + label
 {
-    transform: translateY(-40px);
+    transform: translate(-20px, -60px);
     transition: all .5s;
     border: none;
-
+    cursor: initial;
 }
-
 
 @keyframes typing {
      from {

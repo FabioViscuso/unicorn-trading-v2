@@ -47,7 +47,7 @@ export const Homepage = () => {
     })
 
     return (
-        <div className="pl-0 pt-24 mobile:pt-24 md:pl-56 w-full">
+        <div className="xs:pt-24 md:pt-0 xs:pl-0 md:pl-56 w-full">
             <Hero />
             {homePageList}
             <PricingWrapper />

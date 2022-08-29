@@ -7,8 +7,8 @@ module.exports = {
   theme: {
     extend: {
       'fontFamily': {
-        'josefin': ['Josefin', 'Sans',],
-        'body': ['Open Sans',],
+        'josefin': ['Josefin Sans', 'sans-serif',],
+        'body': ['Open Sans', 'sans-serif'],
       },
     },
     screens: {

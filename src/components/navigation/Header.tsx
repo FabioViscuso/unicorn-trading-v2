@@ -14,11 +14,11 @@ export function Header() {
 
     return (
         <nav className="font-['Quicksand'] bg-gradient-to-br opacity-75 z-10 from-[#f2b5d4] via-[#eff7f6] to-[#7bdff2]
-        flex xs:flex-row md:flex-col xs:h-24 md:h-screen xs:w-full md:w-56 xs:justify-between md:justify-start px-6
-         fixed top-0">
+        flex xs:flex-row md:flex-col justify-between xs:h-24 md:h-screen xs:w-full md:w-56 px-6 xs:py-1 md:py-10
+         fixed top-0 bottom-0">
             <div className="row-wrap align-center flex flex-row justify-around md:px-14 px-2 ">
-                <img className="logo w-30 h-30 " src={logo} alt={'main logo'}></img >
-                <h2 className="xs:hidden text-2xl pb-1">Unicorn <br /> Trading</h2>
+                <img className="w-30 h-30 " src={logo} alt={'main logo'}></img >
+                <h2 className="xs:hidden md:block text-2xl pb-1">Unicorn <br /> Trading</h2>
             </div>
 
             <div className="px-4 sidebar-links justify-center hidden md:flex md:flex-col ">
@@ -57,15 +57,15 @@ export function Header() {
                         <div className=" "></div>
                     </Link>
                 </button>}
-                {!isLogged && <button onClick={openLoginModal} className="sugarCloudBtn text-base font-semibold" >
+                {!isLogged && <button onClick={openLoginModal} className="sugarCloudBtn text-base py-2" >
                     <span>Login</span>
                     <div className=" "></div>
                 </button>}
-                {isLogged && <button onClick={logoutHandler} className="sugarCloudBtn  text-base font-semibold" >
+                {isLogged && <button onClick={logoutHandler} className="sugarCloudBtn text-base py-2" >
                     <span>Logout</span>
                     <div className=" "></div>
                 </button>}
-                {!isLogged && <button onClick={openSignupModal} className="sugarCloudBtn text-base font-semibold" >
+                {!isLogged && <button onClick={openSignupModal} className="sugarCloudBtn text-base py-2" >
                     <span>Sign Up</span>
                     <div className=" "></div>
                 </button>}
