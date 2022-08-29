@@ -1,21 +1,20 @@
 import logo from "../../images/unicorno_logo.png"
 export const Footer = () => {
     return (
-        <footer className="footer row-wrap flex flex-col justify-between center p-xl ">
-            <img className="animate-ping p-6 ml-64" src={logo} width='120' alt={"footer logo"} >
-            </img>
-
-            <div className="footer-links flex flex-row px-10 gap-10 ">
-                <span className="footer-link hover:animate-bounce">
+        <footer className="footer row-wrap flex flex-col justify-between p-xl mt-10 ">
+            <div className="footer-links flex flex-row px-10 gap-10 items-center ">
+                <img className=" p-2 ml-4" src={logo} width='120' alt={"footer logo"} >
+                </img>
+                <span className=" ">
                     <a href=""> TERMS OF SERVICE</a>
                 </span>
 
 
-                <div className="footer-link hover:animate-bounce">
+                <div className=" ">
                     <a href="">PRIVACY POLICY</a>
                 </div>
 
-                <div className="footer-link hover:animate-bounce ">
+                <div className=" ">
                     <a className="hover:animate-bounce p-1" href="">DISCLAIMER</a>
                 </div>
             </div>

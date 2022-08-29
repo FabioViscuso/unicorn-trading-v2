@@ -23,7 +23,7 @@ export const Pricing = (props: PricingProps) => {
                             <li className="font-quicksand text-gray-800 text-md py-2 md:py-1">- More Unicorns!</li>
                         </>}
                 </ul>
-                <button className="hover:animate-bounce bg-[#f2b5d4] rounded-md p-2 m-2 drop-shadow-[0px_2px_2px_rgba(0,0,0,0.9)]" type='submit'>Subscribe Now</button>
+                <button className="neumButton px-6 py-3 " type='submit'>Subscribe Now</button>
             </div>
         </section>
     )

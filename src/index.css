@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+input::placeholder {
+    color:#333333 ;
+    opacity: 1;
+}
+
 
 #tsparticles {
     position: fixed;
@@ -21,4 +26,91 @@
     --color-cottoncandy: #f7d6e0;
     --color-piggypink: #f2b5d4;
     --color-darkgray: #333333;
-    --color-gray: #555555; */
+    --color-gray: #555555;
+    --color-lightGray: #9da1a1*/
+.sugarCloudBtn{
+    color: #090909;
+    padding: 0.3em 1.3em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: inherit;
+    /* border: 1px solid #e8e8e8; */
+    transition: all .3s;
+    box-shadow:
+    6px 6px 12px #c5c5c5,
+    -6px -6px 12px #fff,
+    inset -2px -2px 6px #c5c5c5,
+    inset 2px 2px 5px #fff;
+}
+.sugarCloudBtn:hover {
+    box-shadow:
+    -6px -6px 12px #c5c5c5,
+    6px 6px 12px #fff,
+    inset 2px 2px 6px #c5c5c5,
+    inset -2px -2px 5px #fff;
+}
+.neumButtonContainer{
+background:#f8d7e8;
+}
+
+.neumButton{
+color:#333333;
+
+font-size: 1.2rem;
+border-radius:0.5em;
+background: #ffe9f4;
+/* border:1px solid  #f8d7e8; */
+transition: all .3s;
+box-shadow:6px 6px 12px #ffe3eb,-6px -6px 12px #eff7f6, inset -6px -6px 12px #ffe3eb, inset 6px 6px 12px #eff7f6;
+}
+
+.neumButton:hover{
+box-shadow: -6px -6px 12px #ffe3eb, 6px 6px 12px #eff7f6, inset 6px 6px 12px #ffe3eb, inset -6px -6px 12px #eff7f6 ;
+cursor: pointer;
+transform: translateY(-3px);
+}
+
+.typing {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.typing-effect{
+    width: 26ch;
+    animation: typing 2s steps(30), effect 1s step-end 2.1s infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 1px solid #9da1a1;
+}
+.typing-effect--label {
+    transform: translate(0);
+    width: 14ch;
+    top: .8rem;
+    left: 1rem;
+    transition: all .5s;
+    line-height: 1.4;
+}
+
+#marketing-email:focus + label,
+#marketing-email:focus-visible + label,
+#marketing-email:active + label
+{
+    transform: translateY(-40px);
+    transition: all .5s;
+    border: none;
+
+}
+
+
+@keyframes typing {
+     from {
+        width:0;
+      }
+    }
+
+@keyframes effect {
+       50% {
+        border-color: transparent;
+      }
+    }
