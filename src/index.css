@@ -57,6 +57,12 @@ input::placeholder {
     z-index: -1;
 }
 
+.bg-clip-custom {
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+
+
+}
+
 .sugarCloudBtn{
     color: #090909;
     font-family: "Josefin Sans", sans-serif;

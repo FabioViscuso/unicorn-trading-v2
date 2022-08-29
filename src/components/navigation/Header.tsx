@@ -15,7 +15,7 @@ export function Header() {
     return (
         <nav className="font-['Quicksand'] bg-[#00000088] text-white
         flex xs:flex-row md:flex-col justify-between xs:h-24 md:h-screen xs:w-full md:w-56 px-6 xs:py-1 md:py-10
-         fixed top-0 bottom-0">
+         fixed top-0 bottom-0 z-50">
             <div className="row-wrap align-center flex flex-row justify-around md:px-14 px-2 ">
                 <img className="w-30 h-30 " src={logo} alt={'main logo'}></img >
                 <h2 className="xs:hidden md:block text-2xl pb-1">Unicorn <br /> Trading</h2>
@@ -44,7 +44,7 @@ export function Header() {
                 </div>
             </div>
 
-            <div className="nav-btn-container align-center flex flex-row md:flex-col gap-7 md:gap-6 justify-between md:justify-around md:mr-0 mr-2 sm: sm:mr-0">
+            <div className="align-center flex flex-row md:flex-col gap-10 md:gap-6 justify-between">
                 {isLogged && <button className="sugatCloudBtn md:hover:animete-bounce hover:animate-bounce  text-base font-semibold">
                     <Link to={'/dashboard'}>
                         <span>Dashboard</span>
