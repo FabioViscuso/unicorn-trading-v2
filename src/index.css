@@ -59,8 +59,10 @@ input::placeholder {
 
 .bg-clip-custom {
   clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+}
 
-
+.hero-fluid-text {
+  font-size: clamp(3rem, 10vmin, 4rem);
 }
 
 .sugarCloudBtn{
@@ -128,6 +130,8 @@ transform: translateY(-3px);
     line-height: 1.2;
     cursor: pointer;
 }
+
+
 
 #marketing-email:focus + label,
 #marketing-email:focus-visible + label,
