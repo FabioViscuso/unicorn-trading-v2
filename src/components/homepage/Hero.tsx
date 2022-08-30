@@ -21,7 +21,7 @@ export const Hero = () => {
                     </div>
                 </form>
             </div>
-            <picture className="hidden w-full bg-gradient-to-b from-[#ffc4f1b1] to-[#00000000] bg-clip-custom xl:flex flex-col justify-center px-2 md:p-7 content-center">
+            <picture className="hidden w-full bg-gradient-to-b from-[#000000b1] to-[#00000000] bg-clip-custom xl:flex flex-col justify-center px-2 md:p-7 content-center">
                 <Lottie animationData={paperPlane} loop={true} />
             </picture>
         </section >
