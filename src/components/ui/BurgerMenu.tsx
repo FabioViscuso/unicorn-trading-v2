@@ -10,7 +10,7 @@ export const BurgerMenu = () => {
     return (
         <div onClick={closeBurgerMenu} className='fixed top-0 bottom-0 left-0 right-0 px-10 bg-[#000000cc] z-[999] flex flex-col justify-center content-center gap-10'>
             {/* Dashboard button */}
-            {isLogged && <button className="sugarCloudBtn text-base py-4 px-6">
+            {isLogged && <button className="neumButton text-base py-4 px-6">
                 <Link to={'/dashboard'}>
                     <span>Dashboard</span>
                     <div className=" pb-1 "></div>
