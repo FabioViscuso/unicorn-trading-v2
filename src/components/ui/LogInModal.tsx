@@ -8,7 +8,7 @@ export function LoginModal() {
     const { loginHandler } = useLogin()
 
     return (
-        <div className="py-10 bg-gradient-to-b from-[#000000d2] via-[#00000090] to-[#00000057] text-4xl transition duration-150 ease-in-out fixed top-0 right-0 bottom-0 left-0 z-50" id="loginModal">
+        <div className="bg-gradient-to-b from-[#000000d2] via-[#00000090] to-[#00000057] text-4xl transition duration-150 ease-in-out fixed top-0 right-0 bottom-0 left-0 z-[1000] flex flex-col justify-center content-center" id="loginModal">
             <div role="alert" className=" container mx-auto w-11/12 md:w-8/10 max-w-lg ">
                 <form onSubmit={loginHandler} className="relative py-8 px-5 md:px-10 bg-gradient-to-b from-[#f7d6e0] to-[#ffeef3] z-[999] rounded-xl" >
 

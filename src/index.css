@@ -62,7 +62,7 @@ input::placeholder {
 }
 
 .hero-fluid-text {
-  font-size: clamp(3rem, 10vmin, 4rem);
+  font-size: clamp(3rem, 8vmin, 4rem);
 }
 
 .sugarCloudBtn{
@@ -105,6 +105,34 @@ box-shadow:6px 6px 12px #ffe3eb,-6px -6px 12px #eff7f6, inset -6px -6px 12px #ff
 box-shadow: -6px -6px 12px #ffe3eb, 6px 6px 12px #eff7f6, inset 6px 6px 12px #ffe3eb, inset -6px -6px 12px #eff7f6 ;
 cursor: pointer;
 transform: translateY(-3px);
+}
+
+.burgerButton,
+.burgerButton::before,
+.burgerButton::after {
+  width: 20px;
+  height: 3px;
+  border-radius: 1px;
+  background-color: #333333;
+}
+
+.burgerButton {
+  position: relative;
+}
+
+.burgerButton::before,
+.burgerButton::after {
+  display: block;
+  content: "";
+  position: absolute;
+}
+
+.burgerButton::before {
+  top: -8px;
+}
+
+.burgerButton::after {
+  top: 8px;
 }
 
 .typing {
