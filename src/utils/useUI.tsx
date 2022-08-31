@@ -7,6 +7,7 @@ export const useUI = () => {
 
     const isLoginModalVisible = useSelector((state: RootState) => state.uiSlice.isLoginModalVisible);
     const isSignupModalVisible = useSelector((state: RootState) => state.uiSlice.isSignupModalVisible);
+    const isBurgerMenuVisible = useSelector((state: RootState) => state.uiSlice.isBurgerMenuVisible)
 
     // Login Modal
     const openLoginModal = () => {
@@ -23,12 +24,23 @@ export const useUI = () => {
     const closeSignupModal = () => {
         dispatch(uiSliceActions.hideSignupModal())
     }
+
+    // Burger Menu
+    const openBurgerMenu = () => {
+        dispatch(uiSliceActions.showBurgerMenu())
+    }
+    const closeBurgerMenu = () => {
+        dispatch(uiSliceActions.hideBurgerMenu())
+    }
     return {
         isLoginModalVisible,
         isSignupModalVisible,
+        isBurgerMenuVisible,
         openLoginModal,
         closeLoginModal,
         openSignupModal,
-        closeSignupModal
+        closeSignupModal,
+        openBurgerMenu,
+        closeBurgerMenu
     }
 }
