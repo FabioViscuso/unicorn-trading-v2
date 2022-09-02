@@ -5,6 +5,7 @@
 
 import { AnyAction, ThunkDispatch } from "@reduxjs/toolkit"
 import { loginActions } from "../slices/login"
+import { uiSliceActions } from "../slices/uiSlice"
 
 export const signupUser = (username: string, email: string, password: string): any => {
     return async (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
@@ -55,6 +56,7 @@ export const loginUser = (username: string, password: string): any => {
                 const data = await response.json()
                 dispatch(loginActions.login({ username: data.username, token: data.accessToken }))
                 localStorage.setItem('authUser', JSON.stringify({ username: data.username, token: data.accessToken }))
+                dispatch(uiSliceActions.hideLoginModal())
             }
         }
 
