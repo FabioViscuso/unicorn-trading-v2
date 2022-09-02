@@ -10,18 +10,18 @@ export const BurgerMenu = () => {
     return (
         <div onClick={closeBurgerMenu} className='fixed top-0 bottom-0 left-0 right-0 px-10 bg-[#000000cc] z-[999] flex flex-col justify-center content-center gap-10'>
             {/* Dashboard button */}
-            <NavLink to={'/dashboard'} className="neumButton text-base py-5 px-6 text-center">
-                {isLogged && <button className="">
+            {isLogged && <NavLink to={'/dashboard'} className="neumButton text-base py-5 px-6 text-center">
+                <button className="">
                     <span>Dashboard</span>
-                </button>}
-            </NavLink>
+                </button>
+            </NavLink>}
 
             {/* Homepage button */}
-            <NavLink to={'/'} className="neumButton text-base py-5 px-6 text-center">
-                {isLogged && <button className="">
+            {isLogged && <NavLink to={'/'} className="neumButton text-base py-5 px-6 text-center">
+                <button className="">
                     <span>Home</span>
-                </button>}
-            </NavLink>
+                </button>
+            </NavLink>}
 
             {/* Login button */}
             {!isLogged && <button onClick={openLoginModal} className="neumButton text-base py-4 px-6" >
