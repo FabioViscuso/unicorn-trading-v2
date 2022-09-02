@@ -1,5 +1,5 @@
 import { createPortal } from 'react-dom';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useUI } from '../../utils/useUI';
 import { useLogin } from "../../utils/useLogin";
 
@@ -10,20 +10,18 @@ export const BurgerMenu = () => {
     return (
         <div onClick={closeBurgerMenu} className='fixed top-0 bottom-0 left-0 right-0 px-10 bg-[#000000cc] z-[999] flex flex-col justify-center content-center gap-10'>
             {/* Dashboard button */}
-            {isLogged && <button className="neumButton text-base py-4 px-6">
-                <Link to={'/dashboard'}>
+            <NavLink to={'/dashboard'} className="neumButton text-base py-5 px-6 text-center">
+                {isLogged && <button className="">
                     <span>Dashboard</span>
-                    <div className=" pb-1 "></div>
-                </Link>
-            </button>}
+                </button>}
+            </NavLink>
 
             {/* Homepage button */}
-            {isLogged && <button className="neumButton text-base py-4 px-6">
-                <Link to={'/'}>
+            <NavLink to={'/'} className="neumButton text-base py-5 px-6 text-center">
+                {isLogged && <button className="">
                     <span>Home</span>
-                    <div className=" "></div>
-                </Link>
-            </button>}
+                </button>}
+            </NavLink>
 
             {/* Login button */}
             {!isLogged && <button onClick={openLoginModal} className="neumButton text-base py-4 px-6" >
