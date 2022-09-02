@@ -5,7 +5,7 @@ import { useLogin } from "../../utils/useLogin";
 
 export function LoginModal() {
     const { closeLoginModal } = useUI();
-    const { loginHandler } = useLogin()
+    const { loginHandler, usernameInput, passwordInput } = useLogin()
 
     return (
         <div className="bg-gradient-to-b from-[#000000d2] via-[#00000090] to-[#00000057] text-4xl transition duration-150 ease-in-out fixed top-0 right-0 bottom-0 left-0 z-[1000] flex flex-col justify-center content-center" id="loginModal">
@@ -15,10 +15,10 @@ export function LoginModal() {
                     <h1 className="text-[#333] font-3xl font-bold tracking-normal leading-tight mb-4">Login</h1>
                     {/* Username */}
                     <label htmlFor="loginUsername" className="text-[#333] text-md font-bold leading-tight tracking-normal">Username</label>
-                    <input id="loginUsername" name='loginUsername' className="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-[#f7d6e0] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Enter username" />
+                    <input id="loginUsername" name='loginUsername' ref={usernameInput} className="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-[#f7d6e0] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Enter username" />
                     {/* Password */}
                     <label htmlFor="loginPassword" className="text-[#333] text-md font-bold leading-tight tracking-normal">Password</label>
-                    <input id="loginPassword" name='loginPassword' type='password' className="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-[#f7d6e0] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Enter password" />
+                    <input id="loginPassword" name='loginPassword' type='password' ref={passwordInput} className="mb-5 mt-2 text-gray-600 focus:outline-none focus:border focus:border-[#f7d6e0] font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Enter password" />
 
                     {/* Submit + close modal button group */}
                     <div className="flex items-center justify-start w-full">
