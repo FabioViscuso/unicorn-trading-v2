@@ -26,18 +26,18 @@ export function Header() {
 
             <div className="xs:hidden md:flex align-center flex-row md:flex-col gap-10 md:gap-10 justify-between">
                 {/* Dashboard button */}
-                <NavLink to={'/dashboard'} className="neumButton text-base py-5 px-6 text-center">
-                    {isLogged && <button className="">
+                {isLogged && <NavLink to={'/dashboard'} className="neumButton text-base py-5 px-6 text-center">
+                    <button className="">
                         <span>Dashboard</span>
-                    </button>}
-                </NavLink>
+                    </button>
+                </NavLink>}
 
                 {/* Homepage button */}
-                <NavLink to={'/'} className="neumButton text-base py-5 px-6 text-center">
-                    {isLogged && <button className="">
+                {isLogged && <NavLink to={'/'} className="neumButton text-base py-5 px-6 text-center">
+                    <button className="">
                         <span>Home</span>
-                    </button>}
-                </NavLink>
+                    </button>
+                </NavLink>}
 
                 {/* Login button */}
                 {!isLogged && <button onClick={openLoginModal} className="neumButton text-base py-5 px-6" >
