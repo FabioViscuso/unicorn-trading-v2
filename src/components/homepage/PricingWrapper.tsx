@@ -14,7 +14,7 @@ export const PricingWrapper = () => {
     })
 
     return (
-        <div className="flex flex-col md:flex-row gap-12 justify-center ">
+        <div className="flex flex-col md:flex-row md:gap-12 justify-center my-20">
             {pricingMenu}
         </div>
     )

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { createPortal } from "react-dom";
 import { RenderedLoginModal } from "../ui/LoginModal";
 import { RenderedSignupModal } from '../ui/SignUpModal';
@@ -21,42 +21,37 @@ export function Header() {
                 <Link to="/">
                     <img className="" src={logo} alt={'main logo'}></img >
                 </Link>
-                <h2 className="xs:hidden md:block font-josefin text-3xl text-center bg-clip-text text-transparent bg-gradient-to-br from-[#ff8cc6] via-[#ffffff] to-[#15c4ff] drop-shadow-[0px_0px_2px_rgb(0,0,0)]">Unicorn <br /> Trading</h2>
+                <h2 className="xs:hidden md:block font-bold font-josefin text-3xl text-center bg-clip-text text-transparent bg-gradient-to-br from-[#ff8cc6] via-[#ffffff] to-[#15c4ff] drop-shadow-[0px_0px_2px_rgb(0,0,0)]">Unicorn <br /> Trading</h2>
             </div>
 
             <div className="xs:hidden md:flex align-center flex-row md:flex-col gap-10 md:gap-10 justify-between">
                 {/* Dashboard button */}
-                {isLogged && <button className="neumButton md:hover:animete-bounce hover:animate-bounce  text-base font-semibold">
-                    <Link to={'/dashboard'}>
+                <NavLink to={'/dashboard'} className="neumButton text-base py-5 px-6 text-center">
+                    {isLogged && <button className="">
                         <span>Dashboard</span>
-                        <div className=" pb-1 "></div>
-                    </Link>
-                </button>}
+                    </button>}
+                </NavLink>
 
                 {/* Homepage button */}
-                {isLogged && <button className="neumButton text-base font-semibold">
-                    <Link to={'/'}>
+                <NavLink to={'/'} className="neumButton text-base py-5 px-6 text-center">
+                    {isLogged && <button className="">
                         <span>Home</span>
-                        <div className=" "></div>
-                    </Link>
-                </button>}
+                    </button>}
+                </NavLink>
 
                 {/* Login button */}
                 {!isLogged && <button onClick={openLoginModal} className="neumButton text-base py-5 px-6" >
                     <span>Login</span>
-                    <div className=" "></div>
                 </button>}
 
                 {/* Logout button */}
                 {isLogged && <button onClick={logoutHandler} className="neumButton text-base py-5 px-6" >
                     <span>Logout</span>
-                    <div className=" "></div>
                 </button>}
 
                 {/* Sign up button */}
                 {!isLogged && <button onClick={openSignupModal} className="neumButton text-base py-5 px-6" >
                     <span>Sign Up</span>
-                    <div className=" "></div>
                 </button>}
 
             </div>

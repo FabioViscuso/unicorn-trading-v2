@@ -4,20 +4,30 @@ const REGISTER_URL = './register'; */
 
 import { createPortal } from "react-dom"
 import { useUI } from "../../utils/useUI"
+import { useLogin } from "../../utils/useLogin"
 
 export function SignUpModal() {
+    const { signupHandler, usernameInput, emailInput, passwordInput } = useLogin()
     const { closeSignupModal } = useUI()
 
     return (
         <div className="bg-gradient-to-b from-[#000000d2] via-[#00000090] to-[#00000057] text-4xl transition duration-150 ease-in-out fixed top-0 right-0 bottom-0 left-0 z-[1000] flex flex-col justify-center content-center" id="signupModal">
             <div role="alert" className="container mx-auto w-11/12 md:w-8/10 max-w-lg">
-                <form className="relative py-8 px-5 md:px-10 bg-gradient-to-b from-[#f7d6e0] to-[#ffeef3] z-[999] rounded-xl" >
+                <form onSubmit={signupHandler} className="relative py-8 px-5 md:px-10 bg-gradient-to-b from-[#f7d6e0] to-[#ffeef3] z-[999] rounded-xl" >
 
                     <h1 className="text-gray-600 font-lg font-bold tracking-normal leading-tight mb-4">Sign Up</h1>
+
+                    {/* USERNAME */}
                     <label htmlFor="signUpUsername" className="text-[#333] text-md font-bold leading-tight tracking-normal">Username</label>
-                    <input id="signUpUsername" name='signUpUsername' className="mb-5 mt-2 text-gray-600 focus:outline-none font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Enter username" />
+                    <input id="signUpUsername" name='signUpUsername' ref={usernameInput} className="mb-5 mt-2 text-gray-600 focus:outline-none font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Enter username" />
+
+                    {/* EMAIL */}
+                    <label htmlFor="signUpEmail" className="text-[#333] text-md font-bold leading-tight tracking-normal" >Email</label>
+                    <input type="email" id="signUpEmail" name="signUpEmail" ref={emailInput} placeholder="Enter email" className="mb-5 mt-2 text-gray-600 focus:outline-none font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" />
+
+                    {/* PASSWORD */}
                     <label htmlFor="signUpPassword" className="text-[#333] text-md font-bold leading-tight tracking-normal">Password</label>
-                    <input id="signUpPassword" name='signUpPassword' type='password' className="mb-5 mt-2 text-gray-600 focus:outline-none font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Enter password" />
+                    <input id="signUpPassword" name='signUpPassword' type='password' ref={passwordInput} className="mb-5 mt-2 text-gray-600 focus:outline-none font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Enter password" />
 
                     <div className="flex items-center justify-start w-full">
                         <button type="submit" className="focus:outline-none transition duration-150 ease-in-out rounded px-8 py-4 mr-6 text-sm sugarCloudBtn">Register Now</button>
@@ -32,7 +42,7 @@ export function SignUpModal() {
                     </button>
                 </form>
             </div>
-        </div>
+        </div >
     )
 }
 
