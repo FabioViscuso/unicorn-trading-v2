@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from '../store/Store'
 
 import { useUI } from './useUI';
-import { signupUser, loginUser } from '../store/actions/loginAction';
+import { signupUser, loginUser } from '../store/thunks/loginThunk';
 import { loginActions } from '../store/slices/login'
 import React, { useRef } from 'react';
 
