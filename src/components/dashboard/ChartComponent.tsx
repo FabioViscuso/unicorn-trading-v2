@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets"
 
 interface Props {
@@ -5,9 +6,9 @@ interface Props {
     index: number
 }
 export const ChartComponent = (props: Props) => {
+    const [isOpen, setIsOpen] = useState(false)
 
     return (
-
         <div className="tab">
             <input
                 type="checkbox"
@@ -15,11 +16,10 @@ export const ChartComponent = (props: Props) => {
                 name={`chk${props.index}`}
                 className={'accordInput'}
             />
-            <label className="tab-label" htmlFor={`chk${props.index}`}>{props.passedSymbol}</label>
+            <label onClick={() => { setIsOpen(!isOpen) }} className="tab-label" htmlFor={`chk${props.index}`}>{props.passedSymbol}</label>
             <div className="tab-content">
-                <AdvancedRealTimeChart symbol={props.passedSymbol} theme="dark" height="610"></AdvancedRealTimeChart>
+                {isOpen && <AdvancedRealTimeChart symbol={props.passedSymbol} theme="dark" autosize={true}></AdvancedRealTimeChart>}
             </div>
-        </div >
-
+        </div>
     )
 }

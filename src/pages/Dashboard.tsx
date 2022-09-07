@@ -28,7 +28,12 @@ export function Dashboard() {
         const exchange = exchangeInputRef.current?.value.toUpperCase();
         const option = optionInputRef.current?.value.toUpperCase();
         const fullOption = `${exchange}:${option}`;
-        addToFollowed(fullOption)
+        console.log(exchange)
+        if (exchange!.length > 2 && option!.length > 2) {
+            addToFollowed(fullOption)
+        } else {
+            window.alert('Ops! Don\'t leave fields empty and use at least 3 characters')
+        }
         exchangeInputRef.current!.value = '';
         optionInputRef.current!.value = '';
     }
@@ -49,6 +54,7 @@ export function Dashboard() {
                         ref={exchangeInputRef}
                         className="text-2xl pl-4 py-1 uppercase rounded"
                         placeholder='Eg: NASDAQ'
+                        autoFocus
                     />
                     <span className="text-4xl mx-4 font-bold">:</span>
                     <input
@@ -59,7 +65,7 @@ export function Dashboard() {
                     <button type="submit" className="neumButton px-10 py-2 ml-2">Add</button>
                 </div>
             </form>
-            {savedOptions.length > 0 && <div className="w-full flex flex-col items-center gap-y-10">
+            {savedOptions.length > 0 && <div className="w-full md:w-8/12 mx-auto flex flex-col items-center gap-y-10">
                 {savedOptions.map((item: string, index: number) => (
                     <ChartComponent key={index} index={index} passedSymbol={item} />
                 ))}

@@ -188,7 +188,7 @@ transform: translateY(-3px);
 
 .tab {
   border-radius: 8px;
-  width: max-content;
+  width: 100%;
   color: white;
   overflow: hidden;
   box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
@@ -242,6 +242,7 @@ transform: translateY(-3px);
   transform: rotate(90deg);
 }
 .accordInput:checked ~ .tab-content {
-  max-height: 100vh;
+  max-height: initial;
+  height: 45vh;
 }
 
