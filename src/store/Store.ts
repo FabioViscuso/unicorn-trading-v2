@@ -5,11 +5,13 @@ import ThunkMiddleware from "redux-thunk";
 // Slices
 import { login } from "./slices/login";
 import { uiSlice } from "./slices/uiSlice";
+import { user } from "./slices/user"
 
 export const store = configureStore({
     reducer: {
         login: login.reducer,
-        uiSlice: uiSlice.reducer
+        uiSlice: uiSlice.reducer,
+        user: user.reducer
     },
     middleware: [ThunkMiddleware]
 })

@@ -3,10 +3,10 @@ import { Hero } from "../components/homepage/Hero";
 // Homepage lists portion
 import { List } from '../components/homepage/List';
 import { PricingWrapper } from "../components/homepage/PricingWrapper";
-import { Footer } from "../components/navigation/Footer"
+import { Footer } from "../components/navigation/Footer";
 
 
-export const Homepage = () => {
+export const Homepage = (props: any) => {
     const ListData = [
         {
             "id": 1,
