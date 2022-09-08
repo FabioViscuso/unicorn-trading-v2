@@ -9,7 +9,7 @@ import { uiSlice } from "./slices/uiSlice";
 export const store = configureStore({
     reducer: {
         login: login.reducer,
-        uiSlice: uiSlice.reducer
+        uiSlice: uiSlice.reducer,
     },
     middleware: [ThunkMiddleware]
 })
