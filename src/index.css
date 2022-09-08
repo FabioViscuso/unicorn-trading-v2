@@ -236,7 +236,8 @@ transform: translateY(-3px);
 }
 
 .accordInput:checked + .tab-label {
-  background: #1a252f;
+  /* background: #1a252f; */
+background:#151924;
 }
 .accordInput:checked + .tab-label::after {
   transform: rotate(90deg);
@@ -246,3 +247,8 @@ transform: translateY(-3px);
   height: 45vh;
 }
 
+
+/* absolute center */
+.absolute-center{
+  transform: translate(-50%, -50%);
+}
