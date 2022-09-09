@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { createPortal } from "react-dom";
 import { RenderedLoginModal } from "../ui/LoginModal";
 import { RenderedSignupModal } from '../ui/SignUpModal';
@@ -10,6 +10,7 @@ import logo from "../../images/unicorno_logo.png"
 
 export function Header() {
 
+    const { pathname } = useLocation()
     const { isLogged, logoutHandler } = useLogin()
     const { isLoginModalVisible, isSignupModalVisible, isBurgerMenuVisible, openLoginModal, openSignupModal, openBurgerMenu } = useUI()
 
@@ -17,23 +18,24 @@ export function Header() {
         <nav className="font-['Quicksand'] bg-[#00000088] text-white
         flex xs:flex-row md:flex-col justify-between xs:h-24 md:h-screen md:max-h-screen xs:w-full md:w-56 px-6 xs:py-1 md:py-10
          fixed top-0 bottom-0 z-50">
-            <div className="xs:basis-[90px] md:basis-auto row-wrap align-center flex flex-col justify-around content-center">
+            <div className="self-center items-center flex flex-col sm:flex-row md:flex-col gap-2 justify-between ">
                 <Link to="/">
-                    <img className="self-center md:ml-8 xs:ml-0" width={120} src={logo} alt={'main logo'}></img >
+                    <img className="self-center xs:w-24" src={logo} alt={'main logo'}></img >
                 </Link>
-                <h2 className="xs:hidden md:block font-bold font-josefin text-2xl text-center bg-clip-text text-transparent bg-gradient-to-br from-[#ff8cc6] via-[#ffffff] to-[#15c4ff] drop-shadow-[0px_0px_2px_rgb(0,0,0)]">Unicorn <br /> Trading</h2>
+                <h2 className="xs:hidden sm:hidden md:block font-bold font-josefin text-2xl text-center bg-clip-text text-transparent bg-gradient-to-br from-[#ff8cc6] via-[#ffffff] to-[#15c4ff] drop-shadow-[0px_0px_2px_rgb(0,0,0)]">Unicorn <br /> Trading</h2>
+                <h2 className="xs:hidden sm:block md:hidden font-bold font-josefin text-2xl text-center bg-clip-text text-transparent bg-gradient-to-br from-[#ff8cc6] via-[#ffffff] to-[#15c4ff] drop-shadow-[0px_0px_2px_rgb(0,0,0)]">Unicorn Trading</h2>
             </div>
 
             <div className="xs:hidden md:flex align-center flex-row md:flex-col gap-10 md:gap-10 justify-between">
                 {/* Dashboard button */}
-                {isLogged && <NavLink to={'/dashboard'} className="neumButton text-base py-5 px-6 text-center">
+                {(isLogged && pathname !== '/dashboard') && <NavLink to={'/dashboard'} className="neumButton text-base py-5 px-6 text-center">
                     <button className="">
                         <span>Dashboard</span>
                     </button>
                 </NavLink>}
 
                 {/* Homepage button */}
-                {isLogged && <NavLink to={'/'} className="neumButton text-base py-5 px-6 text-center">
+                {(isLogged && pathname !== '/') && <NavLink to={'/'} className="neumButton text-base py-5 px-6 text-center">
                     <button className="">
                         <span>Home</span>
                     </button>
