@@ -19,9 +19,9 @@ export function Header() {
          fixed top-0 bottom-0 z-50">
             <div className="xs:basis-[90px] md:basis-auto row-wrap align-center flex flex-col justify-around content-center">
                 <Link to="/">
-                    <img className="" src={logo} alt={'main logo'}></img >
+                    <img className="self-center md:ml-8 xs:ml-0" width={120} src={logo} alt={'main logo'}></img >
                 </Link>
-                <h2 className="xs:hidden md:block font-bold font-josefin text-3xl text-center bg-clip-text text-transparent bg-gradient-to-br from-[#ff8cc6] via-[#ffffff] to-[#15c4ff] drop-shadow-[0px_0px_2px_rgb(0,0,0)]">Unicorn <br /> Trading</h2>
+                <h2 className="xs:hidden md:block font-bold font-josefin text-2xl text-center bg-clip-text text-transparent bg-gradient-to-br from-[#ff8cc6] via-[#ffffff] to-[#15c4ff] drop-shadow-[0px_0px_2px_rgb(0,0,0)]">Unicorn <br /> Trading</h2>
             </div>
 
             <div className="xs:hidden md:flex align-center flex-row md:flex-col gap-10 md:gap-10 justify-between">
