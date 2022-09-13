@@ -62,29 +62,42 @@ export function Dashboard() {
 
     return (
 
-        <div className="py-24 xs:pl-0 md:pl-56 w-full flex flex-col gap-10 ">
+        <div className="py-24  md:pl-56 md:py-12 w-full flex flex-col gap-10 xs:pl-0 xs:gap-4 ">
             {/* dynamic header that greets the logged user */}
-            <h1 className="hero-fluid-text text-center xs:mx-auto font-josefin font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#777] via-[#000] to-[#777]">
-                Welcome back, <span className=" font-bold font-josefin text-3xl md:text-6xl text-center  bg-clip-text text-transparent bg-gradient-to-br from-[#ff8cc6] via-[#ffffff] to-[#15c4ff] drop-shadow-[0px_0px_2px_rgb(0,0,0)]">{currUser.username}</span>
+            <h1 className="hero-fluid-text text-center xs:mx-auto font-josefin text-base-center font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#777] via-[#000] to-[#777] lg:text-5xl sm:text-4xl xs:text-2xl">
+                Welcome back, <span className=" font-bold font-josefin text-3xl md:text-4xl text-center  bg-clip-text text-transparent bg-gradient-to-br from-[#ff8cc6] via-[#ffffff] to-[#15c4ff] drop-shadow-[0px_0px_2px_rgb(0,0,0)] xs:text-3xl">{currUser.username}</span>
             </h1>
 
             {/* this form creates new symbols (aka stock options?) */}
-            <form onSubmit={addStockOptionHandler} className="w-max mx-auto flex flex-col justify-center items-center">
-                <h3 className="text-xl pb-4 capitalize font-bold">Add a new stock option to track</h3>
-                <div className="flex justify-center items-center ">
-                    <input
-                        ref={exchangeInputRef}
-                        className="text-2xl pl-4 py-1 uppercase rounded"
-                        placeholder='Eg: NASDAQ'
-                        autoFocus
-                    />
-                    <span className="text-4xl mx-4 font-bold">:</span>
-                    <input
-                        ref={optionInputRef}
-                        className="text-2xl pl-4 uppercase py-1 rounded"
-                        placeholder='Eg: AAPL'
-                    />
-                    <button type="submit" className="neumButton px-10 py-2 ml-2">Add</button>
+            <form onSubmit={addStockOptionHandler} className="w-max mx-auto flex flex-col justify-center items-center gap-6 my-10">
+                <h3 className="text-2xl capitalize font-bold sm:text-lg xs:text-sm">Add a new stock option to track</h3>
+                {/* outer form div (inner form div + add button */}
+                <div className="flex justify-center items-center gap-18 md:gap-6s xs:gap-3 my-2">
+                    {/* inner form div (exchange, :, option) */}
+                    <div className="flex justify-center bg-gray-100 rounded-md p-1 md:px-20 sm:px-24 items-center ">
+                        {/* the exhange part */}
+                        <div className="flex flex-col gap-2 relative">
+                            <label className="self-center text-xs uppercase absolute -top-7">Exchange</label>
+                            <input
+                                ref={exchangeInputRef}
+                                className=" xs:text-sm lg:text-2xl uppercase bg-gray-100  hover:translate-y-0 xs:w-28  lg:w-52 px-2 outline-none text-center font-semibold"
+                                placeholder='Eg: NASDAQ'
+                                autoFocus
+                            />
+                        </div>
+                        {/* the two dots */}
+                        <span className="text-4xl font-bold xs:text-xl md:text-xl sm:px-20 md:px-10 hover:translate-y-0 outline-none">:</span>
+                        {/* the option part */}
+                        <div className="flex flex-col gap-2 relative">
+                            <label className="self-center text-xs uppercase absolute -top-7" >Option</label>
+                            <input
+                                ref={optionInputRef}
+                                className=" xs:text-sm lg:text-2xl uppercase bg-gray-100  hover:translate-y-0 xs:w-28  lg:w-52 px-2 outline-none text-center font-semibold"
+                                placeholder='Eg: AAPL'
+                            />
+                        </div>
+                    </div>
+                    <button type="submit" className="bg-[#2c3e50] hover:bg-[#1a252f] rounded-full text-xl  w-8 h-8 text-gray-200 font-semibold">+</button>
                 </div>
             </form>
 
@@ -93,10 +106,11 @@ export function Dashboard() {
                 the savedOptions state array, passing them the array contents as symbols
             */}
             {
-                <div className="w-full md:w-8/12 mx-auto flex flex-col items-center gap-y-10">
+                <div className="w-full md:w-10/12 mx-auto flex flex-col items-center gap-y-10 xs:gap-y-5 xs:w-11/12">
                     {savedOptions.map((item: string, index: number) => (
                         <div key={index} className='relative w-full z-0'>
-                            <button onClick={() => deleteItemHandler(index)} className="absolute-center absolute right-14 top-6 my-1 bg-red-500 hover:bg-red-700 px-4 pb-1 rounded text-4xl z-20 text-white">x</button>
+                            <button onClick={() => deleteItemHandler(index)}
+                                className="absolute-center absolute right-14 top-6 my-1 bg-red-500 hover:bg-red-700 px-4 pb-1 rounded text-4xl z-20 text-white xs:text-sm xs:px-2 xs:right-8 ">x</button>
                             <ChartComponent index={index} passedSymbol={item} />
                         </div>
                     ))
