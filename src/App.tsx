@@ -7,6 +7,7 @@ import { ParticlesContainer } from './components/ui/ParticlesContainer';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginActions } from './store/slices/login';
+import { Page404 } from './pages/Page404';
 
 function App() {
   // run one time to check for existing auth data
@@ -27,12 +28,7 @@ function App() {
         <Route element={<Protected />} >
           <Route path='/dashboard' element={<Dashboard />} />
         </Route>
-        <Route path='*' element={
-          <div>
-            <h1>Not found!</h1>
-            <Link to='/'>Back to home</Link>
-          </div>
-        } />
+        <Route path='*' element={<Page404 />} />
       </Routes>
     </div >
   );
