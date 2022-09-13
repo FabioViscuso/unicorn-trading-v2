@@ -10,7 +10,8 @@ import { uiSliceActions } from "../slices/uiSlice"
 export const signupUser = (username: string, email: string, password: string): any => {
     return async (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
         const signup = async () => {
-            const response = await fetch('http://localhost:6789/api/auth/signup',
+            const response = await fetch(
+                `${process.env.REACT_APP_BACKEND_URL}/api/auth/signup`,
                 {
                     method: 'POST',
                     headers: {
@@ -39,7 +40,8 @@ export const signupUser = (username: string, email: string, password: string): a
 export const loginUser = (username: string, password: string): any => {
     return async (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
         const login = async () => {
-            const response = await fetch('http://localhost:6789/api/auth/signin',
+            const response = await fetch(
+                `${process.env.REACT_APP_BACKEND_URL}/api/auth/signin`,
                 {
                     method: 'POST',
                     headers: {
