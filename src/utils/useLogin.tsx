@@ -7,7 +7,7 @@ import { loginActions } from '../store/slices/login'
 import React, { useRef } from 'react';
 
 export const useLogin = () => {
-    const { closeSignupModal } = useUI()
+    const { closeSignupModal, newNotification } = useUI()
     const isLogged = useSelector((state: RootState) => state.login.isLogged);
     const currUser = useSelector((state: RootState) => state.login.currentUser);
 
@@ -28,7 +28,7 @@ export const useLogin = () => {
             dispatch(signupUser(usernameValue, emailValue, passwordValue))
             closeSignupModal();
         } else {
-            console.log('please insert valid field data')
+            newNotification(false, 'Please complete all fields')
         }
     }
 
@@ -41,7 +41,7 @@ export const useLogin = () => {
             typeof passwordValue === 'string' && passwordValue.length >= 8) {
             dispatch(loginUser(usernameValue, passwordValue))
         } else {
-            console.log('please insert valid field data')
+            newNotification(false, 'Please complete all fields')
         }
     }
     function logoutHandler() {

@@ -5,9 +5,10 @@
 
 import { AnyAction, ThunkDispatch } from "@reduxjs/toolkit"
 import { loginActions } from "../slices/login"
-import { uiSliceActions } from "../slices/uiSlice"
+import { uiSliceActions } from "../slices/uiSlice";
 
 export const signupUser = (username: string, email: string, password: string): any => {
+
     return async (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
         const signup = async () => {
             const response = await fetch(
@@ -23,16 +24,19 @@ export const signupUser = (username: string, email: string, password: string): a
                 }
             )
             if (!response.ok) {
-                throw new Error('Failed to signup, please try again')
+                // throw new Error('Failed to signup, please try again')
+                dispatch(uiSliceActions.showNotification({ status: false, message: 'signup failed, please try again later' }))
             } else {
-                console.log('successfully added a new user')
+                // console.log('successfully added a new user')
+                dispatch(uiSliceActions.showNotification({ status: true, message: 'successfully added a new user' }))
+
             }
         }
 
         try {
             signup()
         } catch (err: any) {
-            console.log(err.message)
+            dispatch(uiSliceActions.showNotification({ status: false, message: err.message }))
         }
     }
 }
@@ -53,19 +57,24 @@ export const loginUser = (username: string, password: string): any => {
                 }
             )
             if (!response.ok) {
-                throw new Error('Failed to login, please try again')
+                //throw new Error('Failed to login, please try again')
+                dispatch(uiSliceActions.showNotification({ status: false, message: 'Login failed, check your credentials' }))
             } else {
                 const data = await response.json()
                 dispatch(loginActions.login({ username: data.username, token: data.accessToken }))
                 localStorage.setItem('authUser', JSON.stringify({ username: data.username, token: data.accessToken }))
                 dispatch(uiSliceActions.hideLoginModal())
+                dispatch(uiSliceActions.showNotification({
+                    status: true, message: 'You\'re logged in. Welcome back!'
+                }))
+
             }
         }
 
         try {
             login()
         } catch (err: any) {
-            console.log(err.message)
+            dispatch(uiSliceActions.showNotification({ status: false, message: err.message }))
         }
     }
 }
