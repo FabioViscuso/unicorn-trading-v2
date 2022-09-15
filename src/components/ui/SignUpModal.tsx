@@ -19,15 +19,15 @@ export function SignUpModal() {
 
                     {/* USERNAME */}
                     <label htmlFor="signUpUsername" className="text-[#333] text-md font-bold leading-tight tracking-normal">Username</label>
-                    <input id="signUpUsername" name='signUpUsername' ref={usernameInput} className="mb-5 mt-2 text-gray-600 focus:outline-none font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Enter username" />
+                    <input id="signUpUsername" name='signUpUsername' ref={usernameInput} className="mb-5 mt-2 text-gray-600 focus:outline-none font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Enter username (min 6 char.)" />
 
                     {/* EMAIL */}
                     <label htmlFor="signUpEmail" className="text-[#333] text-md font-bold leading-tight tracking-normal" >Email</label>
-                    <input type="email" id="signUpEmail" name="signUpEmail" ref={emailInput} placeholder="Enter email" className="mb-5 mt-2 text-gray-600 focus:outline-none font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" />
+                    <input type="email" id="signUpEmail" name="signUpEmail" ref={emailInput} placeholder="example@mail.com" className="mb-5 mt-2 text-gray-600 focus:outline-none font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" />
 
                     {/* PASSWORD */}
                     <label htmlFor="signUpPassword" className="text-[#333] text-md font-bold leading-tight tracking-normal">Password</label>
-                    <input id="signUpPassword" name='signUpPassword' type='password' ref={passwordInput} className="mb-5 mt-2 text-gray-600 focus:outline-none font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Enter password" />
+                    <input id="signUpPassword" name='signUpPassword' type='password' ref={passwordInput} className="mb-5 mt-2 text-gray-600 focus:outline-none font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border" placeholder="Enter password (min 8 char.)" />
 
                     <div className="flex items-center justify-start w-full">
                         <button type="submit" className="focus:outline-none transition duration-150 ease-in-out rounded px-8 py-4 mr-6 text-sm sugarCloudBtn">Register Now</button>

@@ -15,7 +15,7 @@ export function Header() {
     const { isLoginModalVisible, isSignupModalVisible, isBurgerMenuVisible, openLoginModal, openSignupModal, openBurgerMenu } = useUI()
 
     return (
-        <nav className="font-['Quicksand'] bg-[#00000088] text-white
+        <nav className="font-['Quicksand'] bg-[#00000088] text-white backdrop-blur-sm
         flex xs:flex-row md:flex-col justify-between xs:h-24 md:h-screen md:max-h-screen xs:w-full md:w-56 px-6 xs:py-1 md:py-10
          fixed top-0 bottom-0 z-50">
             <div className="self-center items-center flex flex-col sm:flex-row md:flex-col gap-2 justify-between ">
