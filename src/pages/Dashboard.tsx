@@ -65,7 +65,7 @@ export function Dashboard() {
         <div className="py-24  md:pl-56 md:py-12 w-full flex flex-col gap-10 xs:pl-0 xs:gap-4 ">
             {/* dynamic header that greets the logged user */}
             <h1 className="hero-fluid-text text-center xs:mx-auto font-josefin text-base-center font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#777] via-[#000] to-[#777] lg:text-5xl sm:text-4xl xs:text-2xl">
-                Welcome back, <span className=" font-bold font-josefin text-3xl md:text-4xl text-center  bg-clip-text text-transparent bg-gradient-to-br from-[#ff8cc6] via-[#ffffff] to-[#15c4ff] drop-shadow-[0px_0px_2px_rgb(0,0,0)] xs:text-3xl">{currUser.username}</span>
+                Welcome back, <span className=" font-bold font-josefin text-3xl md:text-4xl text-center bg-clip-text text-transparent bg-gradient-to-br from-[#ff8cc6] via-[#ffffff] to-[#15c4ff] drop-shadow-[0px_0px_2px_rgb(0,0,0)] xs:text-3xl leading-relaxed">{currUser.username}</span>
             </h1>
 
             {/* this form creates new symbols (aka stock options?) */}

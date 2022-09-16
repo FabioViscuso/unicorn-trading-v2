@@ -4,10 +4,16 @@ import { RootState } from '../store/Store'
 
 export const useUI = () => {
     const dispatch = useDispatch();
-
+    /** Modals */
     const isLoginModalVisible = useSelector((state: RootState) => state.uiSlice.isLoginModalVisible);
     const isSignupModalVisible = useSelector((state: RootState) => state.uiSlice.isSignupModalVisible);
-    const isBurgerMenuVisible = useSelector((state: RootState) => state.uiSlice.isBurgerMenuVisible)
+    /** Burger menu */
+    const isBurgerMenuVisible = useSelector((state: RootState) => state.uiSlice.isBurgerMenuVisible);
+    //Notifications
+    const isNotificationVisible = useSelector((state: RootState) => state.uiSlice.notification.isVisible);
+    const notificationStatus = useSelector((state: RootState) => state.uiSlice.notification.isOkStatus);
+    const notificationMessage = useSelector((state: RootState) => state.uiSlice.notification.message);
+
 
     // Login Modal
     const openLoginModal = () => {
@@ -32,15 +38,29 @@ export const useUI = () => {
     const closeBurgerMenu = () => {
         dispatch(uiSliceActions.hideBurgerMenu())
     }
+    // Notification Popup
+    const newNotification = (isOkStatus: boolean, message: string) => {
+        dispatch(uiSliceActions.showNotification({ status: isOkStatus, message: message }))
+    }
+
+    const resetNotification = () => {
+        dispatch(uiSliceActions.resetNotification())
+    }
+
     return {
         isLoginModalVisible,
         isSignupModalVisible,
         isBurgerMenuVisible,
+        isNotificationVisible,
+        notificationStatus,
+        notificationMessage,
         openLoginModal,
         closeLoginModal,
         openSignupModal,
         closeSignupModal,
         openBurgerMenu,
-        closeBurgerMenu
+        closeBurgerMenu,
+        newNotification,
+        resetNotification
     }
 }
