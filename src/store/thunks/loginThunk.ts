@@ -25,7 +25,9 @@ export const signupUser = (username: string, email: string, password: string): a
             if (!response.ok) {
                 throw new Error('Failed to signup, please try again')
             } else {
-                console.log('successfully added a new user')
+                // console.log('successfully added a new user')
+                dispatch(uiSliceActions.showNotification({ status: true, message: 'successfully added a new user' }))
+                dispatch(uiSliceActions.hideSignupModal())
             }
         }
 

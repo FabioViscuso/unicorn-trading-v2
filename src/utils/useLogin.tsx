@@ -7,7 +7,7 @@ import { loginActions } from '../store/slices/login'
 import React, { useRef } from 'react';
 
 export const useLogin = () => {
-    const { closeSignupModal } = useUI()
+    const { newNotification } = useUI()
     const isLogged = useSelector((state: RootState) => state.login.isLogged);
     const currUser = useSelector((state: RootState) => state.login.currentUser);
 
@@ -26,7 +26,6 @@ export const useLogin = () => {
             typeof emailValue === 'string' && emailValue.length >= 6 &&
             typeof passwordValue === 'string' && passwordValue.length >= 8) {
             dispatch(signupUser(usernameValue, emailValue, passwordValue))
-            closeSignupModal();
         } else {
             console.log('please insert valid field data')
         }

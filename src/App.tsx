@@ -1,4 +1,4 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Homepage } from './pages/Homepage';
 import { Dashboard } from './pages/Dashboard';
 import { Protected } from './components/navigation/Protected';
