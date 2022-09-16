@@ -26,7 +26,6 @@ export const useLogin = () => {
             typeof emailValue === 'string' && emailValue.length >= 6 &&
             typeof passwordValue === 'string' && passwordValue.length >= 8) {
             dispatch(signupUser(usernameValue, emailValue, passwordValue))
-            closeSignupModal();
         } else {
             newNotification(false, 'Please complete all fields')
         }
